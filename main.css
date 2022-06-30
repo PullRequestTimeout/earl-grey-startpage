@@ -1,0 +1,220 @@
+/*||Resets--------------------------------------------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*|| Colour Variables --------------------------------------------------------------------------------------------------*/
+
+:root {
+    --clr-light-background: #F4EFDF;
+    --clr-dark-background: #29557D;
+    --clr-line-stroke: #002C54;
+    --clr-light-accent: #79ADDD;
+}
+
+/*|| Main --------------------------------------------------------------------------------------------------*/
+
+body {
+    background-color: var(--clr-light-background);
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 2em;
+    right: 4em;
+}
+
+.clock {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 12rem;
+    color: transparent;
+    -webkit-text-stroke-width: 3.5px;
+    -webkit-text-stroke-color: var(--clr-line-stroke);
+    text-shadow: -8px -8px 0 var(--clr-light-accent);
+    margin: auto auto auto 15vw;
+}
+
+.widget-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3em;
+    margin: auto 15vw auto auto;
+}
+
+.widget {
+    position: relative;
+    width: 8em;
+    height: 8em;
+    background: transparent;
+    fill: none;
+    outline: solid 3.8px var(--clr-line-stroke);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wbr:after {
+    content: "";
+    width: 8em;
+    height: 8em;
+    background-color: var(--clr-light-accent);
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    right: -10px;
+    transition: 0.3s ease;
+}
+
+.wtr:after {
+    content: "";
+    width: 8em;
+    height: 8em;
+    background-color: var(--clr-light-accent);
+    position: absolute;
+    z-index: -1;
+    top: -13px;
+    right: -9px;
+    transition: 0.3s ease;
+}
+
+.wbl:after {
+    content: "";
+    width: 8em;
+    height: 8em;
+    background-color: var(--clr-light-accent);
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    right: 10px;
+    transition: 0.3s ease;
+}
+
+.wtl:after {
+    content: "";
+    width: 8em;
+    height: 8em;
+    background-color: var(--clr-light-accent);
+    position: absolute;
+    z-index: -1;
+    top: -8px;
+    right: 11px;
+    transition: 0.3s ease;
+}
+
+.wtl:hover:after, .wbl:hover:after, .wtr:hover:after, .wbr:hover:after {
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+/*|| Dark Mode Switch --------------------------------------------------------------------------------------------------*/
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: fixed;
+    top: 2em;
+    right: 4em;
+    display: inline-block;
+    width: 3.2em;
+    height: 1.55em;
+   }
+   
+   /* Hide default HTML checkbox */
+   .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+   
+   /* The slider */
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--clr-light-accent);
+    transition: .4s;
+    border-radius: 30px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 1em;
+    width: 1em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: var(--clr-light-background);
+    transition: .4s;
+   }
+   
+   input:checked + .slider {
+    background-color: var(--clr-line-stroke);
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px var(--clr-line-stroke);
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.5em);
+   }
