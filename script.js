@@ -40,8 +40,9 @@ const weatherWidget = document.getElementById("weatherIcon");
 fetch("https://api.openweathermap.org/data/2.5/weather?lat=49.07804610421704&lon=-117.80089689845951&appid=464f77339fb17e890968824a382be54b&units=metric')")
   .then((response) => response.json())
   .then((data) => {
-    // console.log(data);
+    console.log(data);
 
+    // Else If needs to be extracted as a function
     if (data.weather[0].main == "Thunderstorm") { 
         weatherWidget.innerHTML = thunderstormIcon;
     }else if (data.weather[0].main == "Clouds") { 
@@ -59,3 +60,8 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=49.07804610421704&lon
     }
   });
 
+// Current Temperature Widget ------------------------------------------------------------------------
+
+// SVG Variables
+
+// Else If for extracting current temp

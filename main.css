@@ -61,10 +61,6 @@ table {
 
 /*|| Main --------------------------------------------------------------------------------------------------*/
 
-/* body {
-    background-color: var(--clr-light-background);
-} */
-
 main {
     height: 100vh;
     width: 100%;
@@ -72,21 +68,100 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-.theme-toggle {
-    position: fixed;
-    top: 2em;
-    right: 4em;
+h1, h2, h3 {
+    font-family: 'Abril Fatface', cursive;
+}
+
+p, input {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+/*|| Left Conatiner --------------------------------------------------------------------------------------------------*/
+
+
+/* Clock */
+.clock-search-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10vw;
 }
 
 .clock {
-    font-family: 'Abril Fatface', cursive;
     font-size: 12rem;
     color: transparent;
     -webkit-text-stroke-width: 3.5px;
     -webkit-text-stroke-color: var(--clr-line-stroke);
     /* text-shadow: -8px -8px 0 var(--clr-light-accent); */
-    margin: auto auto auto 15vw;
+    margin: auto auto 0 auto;
+    justify-self: center;
 }
+
+/* Search Bar */
+.search-widget {
+    display: inline-block;
+    justify-self: center;
+    margin: 3em auto auto auto;
+
+}
+
+.search-input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 3.5px var(--clr-line-stroke);
+    width: 10em;
+    padding: 0.3em;
+    color: var(--clr-line-stroke);
+    caret-color: var(--clr-line-stroke);
+}
+
+/* Logo Switch */
+
+input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.search-widget label {
+    position: relative;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+
+input[type="radio"] + label svg {
+    opacity: 0.6;
+}
+
+input[type="radio"]:hover + label svg {
+    transform: scale(1.1);
+    transition: 0.1s ease;
+}
+
+input[type="radio"]:checked + label svg {
+    opacity: 1;
+} 
+
+input[type="radio"]:active + label svg {
+    opacity: 1;
+}
+
+input[type="radio"]:checked + label::after {
+    content: "";
+    width: 2em;
+    height: 2em;
+    background-color: var(--clr-light-accent);
+    position: relative;
+    z-index: -1;
+}
+
+/*|| Right Container --------------------------------------------------------------------------------------------------*/
 
 .widget-grid {
     display: grid;
@@ -166,7 +241,26 @@ a:hover svg {
     transition: 0.1s ease-in-out;
     transform: scale(1.05);
 }
+
+.loading-spinner {
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(359deg);
+    }
+}
+
 /*|| Dark Mode Switch --------------------------------------------------------------------------------------------------*/
+
+.theme-toggle {
+    position: fixed;
+    top: 2em;
+    right: 4em;
+}
 
 /* The switch - the box around the slider */
 .switch {
