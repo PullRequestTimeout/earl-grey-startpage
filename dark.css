@@ -1,3 +1,35 @@
+/*|| Colour Variables --------------------------------------------------------------------------------------------------*/
+
+:root {
+    --clr-light-background: #F4EFDF;
+    --clr-dark-background: #29557D;
+    --clr-line-stroke: #002C54;
+    --clr-light-accent: #79ADDD;
+}
+
+/*|| Dark Theme --------------------------------------------------------------------------------------------------*/
+
 body {
-    background-color: #29557D;
+    background-color: var(--clr-dark-background);
+    transition: .3s ease;
+}
+
+.clock {
+    text-shadow: -8px -8px 0 var(--clr-light-background);
+}
+
+.wbr:after {
+    background-color: var(--clr-light-background);
+}
+
+.wbl:after {
+    background-color: var(--clr-light-background);
+}
+
+.wtr:after {
+    background-color: var(--clr-light-background);
+}
+
+.wtl:after {
+    background-color: var(--clr-light-background);
 }

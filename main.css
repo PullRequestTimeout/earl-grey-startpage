@@ -61,9 +61,9 @@ table {
 
 /*|| Main --------------------------------------------------------------------------------------------------*/
 
-body {
+/* body {
     background-color: var(--clr-light-background);
-}
+} */
 
 main {
     height: 100vh;
@@ -84,7 +84,7 @@ main {
     color: transparent;
     -webkit-text-stroke-width: 3.5px;
     -webkit-text-stroke-color: var(--clr-line-stroke);
-    text-shadow: -8px -8px 0 var(--clr-light-accent);
+    /* text-shadow: -8px -8px 0 var(--clr-light-accent); */
     margin: auto auto auto 15vw;
 }
 
@@ -162,6 +162,10 @@ main {
     cursor: pointer;
 }
 
+a:hover svg {
+    transition: 0.1s ease-in-out;
+    transform: scale(1.05);
+}
 /*|| Dark Mode Switch --------------------------------------------------------------------------------------------------*/
 
 /* The switch - the box around the slider */
