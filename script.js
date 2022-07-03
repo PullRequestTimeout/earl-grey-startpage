@@ -41,7 +41,8 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=49.07804610421704&lon
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-
+    document.getElementById("weatherDescription").setAttribute("title", data.weather[0].description);
+    // Sets the current weather icon
     // Else If needs to be extracted as a function
     if (data.weather[0].main == "Thunderstorm") { 
         weatherWidget.innerHTML = thunderstormIcon;
@@ -57,8 +58,10 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=49.07804610421704&lon
         weatherWidget.innerHTML = clearIcon;
     } else if (data.weather[0].main == "Mist" || "Smoke" || "Haze" || "Dust" || "Fog") { 
         weatherWidget.innerHTML = fogIcon;
-    }
-  });
+    };
+});
+
+
 
 // Current Temperature Widget ------------------------------------------------------------------------
 
