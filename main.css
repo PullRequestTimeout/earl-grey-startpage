@@ -103,9 +103,10 @@ p, input {
 
 /* Search Bar */
 .search-widget {
-    display: inline-block;
+    display: inline-flex;
+    /* justify-content: space-between; */
     justify-self: center;
-    margin: 3em auto auto auto;
+    margin: 4em auto auto auto;
 
 }
 
@@ -130,10 +131,10 @@ input[type="radio"] {
 
 .search-widget label {
     position: relative;
-    top: 1em;
-    right: 1em;
+    right: 1.5em;
     cursor: pointer;
 }
+
 
 input[type="radio"] + label svg {
     opacity: 0.6;

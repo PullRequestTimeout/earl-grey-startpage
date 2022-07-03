@@ -65,3 +65,18 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=49.07804610421704&lon
 // SVG Variables
 
 // Else If for extracting current temp
+
+// Search Toggle ------------------------------------------------------------------------
+
+const searchString = document.getElementById("searchString")
+
+document.getElementById("googleSearchSwitch").onclick = function (){
+    searchString.setAttribute("action", "https://www.google.com/search?")
+}
+
+document.getElementById("duckduckgoSearchSwitch").onclick = function(){
+    searchString.setAttribute("action", "https://duckduckgo.com/?")
+}
+
+
+

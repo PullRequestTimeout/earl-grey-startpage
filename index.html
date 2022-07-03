@@ -27,7 +27,7 @@
         } else if (currentTime.getHours() > 12 && currentTime.getMinutes() < 10) {
         timeDisplay.innerText = currentTime.getHours() - 12 + ":0" + currentTime.getMinutes();
         } else if (currentTime.getHours() < 12 && currentTime.getMinutes() > 10){
-            timeDisplay.innerText = currentTime.getHours() + ":0" + currentTime.getMinutes();
+            timeDisplay.innerText = currentTime.getHours() + ":" + currentTime.getMinutes();
         }};
     
     </script>
@@ -38,7 +38,7 @@
     <title>New Tab</title>
 </head>
 
-<body onload="updateClock(); setInterval('updateClock()', 1000)">
+<body onload="updateClock(); setInterval('updateClock()', 10000)">
 
     <div>
         <label class="switch">
@@ -52,7 +52,7 @@
                 <h1 id="timeDisplay"></h1>
             </div>
             <div class="search-widget">
-                <input type="radio" name="search-provider" class="search-switch" value="google" id="googleSearchSwitch" checked>
+                <input type="radio" name="search" class="search-switch" value="google" id="googleSearchSwitch" checked>
                 <label for="googleSearchSwitch">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#002C54" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -60,7 +60,7 @@
                       </svg>
                 </label>
 
-                <input type="radio" name="search-provider" class="search-switch" value="duckduckgo" id="duckduckgoSearchSwitch">
+                <input type="radio" name="search" class="search-switch" value="duckduckgo" id="duckduckgoSearchSwitch">
                 <label for="duckduckgoSearchSwitch">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" width="40px" height="40px">
                         <g id="surface33221335">
@@ -69,7 +69,10 @@
                         </svg>
                 </label>
                 
-                <input type="text" class="search-input" id="searchString" autofocus>
+                <form id="searchString" action="https://www.google.com/search?">
+                    <input type="text" name="q" class="search-input" autocomplete="off" autofocus>
+                    <input type="submit" hidden>
+                </form> 
             </div>
         </div>
         <div class="widget-grid">

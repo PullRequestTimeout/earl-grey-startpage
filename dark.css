@@ -33,3 +33,7 @@ body {
 .wtl:after {
     background-color: var(--clr-light-background);
 }
+
+.search-input {
+    color: var(--clr-light-background);
+}
