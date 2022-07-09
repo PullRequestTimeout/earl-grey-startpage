@@ -10,12 +10,13 @@ Built as a way to play with some new-to-me JS concepts; API calls, basic dark/li
  - Facebook (going to be replaced as soon as I find a better icon)
  - Netflix
  - Reddit
- - Mountain Conditions Widget?
+ - Mountain Conditions Widget*
  - Udemy
  - Current Temperature Widget (Powered by OpenWeatherMaps API)
 
 ## To-Dos
 
+ - Use .localStorage() to save user settings
  - Allow browser location to update API call
  - ~~Add Search Bar Underneath Clock~~
 	- ~~Add switch between Google and DuckDuckGo~~
@@ -29,7 +30,7 @@ Built as a way to play with some new-to-me JS concepts; API calls, basic dark/li
 	- ~~Use OpenWeatherMaps API to display current temperature~~
 	- ~~Hover over Current Temperature Widget to Display Daily Min/Max~~
 	- Click Current Temperature Widget to swap between celcius and fahrenheit 
- - Mountain Conditions Widget
+ - Mountain Conditions Widget*
 	- Could probably be a whole app itself. Click Icon to display snow conditions from Dec to Apr, or bike trail conditions from Apr to Dec
 	- Could use AvalancheCanada's API for forecasting (https://avalanche-canada.github.io/AvCan-Services/)
 	- Use OpenWeatherMaps API for last 5 days to build general expected trail conditions of bike trails
