@@ -20,7 +20,6 @@
 
         const timeDisplay = document.getElementById("timeDisplay");
         const currentTime = new Date();
-
         // I hate 24hr time
         if (currentTime.getHours() > 12 && currentTime.getMinutes() > 10) {
         timeDisplay.innerText = currentTime.getHours() - 12  + ":" + currentTime.getMinutes();
@@ -28,6 +27,8 @@
         timeDisplay.innerText = currentTime.getHours() - 12 + ":0" + currentTime.getMinutes();
         } else if (currentTime.getHours() < 12 && currentTime.getMinutes() > 10){
             timeDisplay.innerText = currentTime.getHours() + ":" + currentTime.getMinutes();
+        } else if (currentTime.getHours() < 12 && currentTime.getMinutes() < 10){
+            timeDisplay.innerText = currentTime.getHours() + ":0" + currentTime.getMinutes();
         }};
     
     </script>
@@ -38,7 +39,7 @@
     <title>New Tab</title>
 </head>
 
-<body onload="updateClock(); setInterval('updateClock()', 1000)">
+<body onload="updateClock(); //setInterval('updateClock()', 1000)">
 
     <div>
         <label class="switch">
