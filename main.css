@@ -259,6 +259,9 @@ a:hover svg {
 
 .temp-widget:hover > #minMaxTempDisplay {
     display: block;
+    max-width: 90%;
+    text-align: center;
+    color: var(--clr-line-stroke);
 }
 
 .loading-spinner {
