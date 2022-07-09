@@ -15,6 +15,10 @@ function toggleDarkStyles(){
         document.getElementById("darkmode").setAttribute("href", "light.css");
 }};
 
+// Update Location ------------------------------------------------------------------------ 
+
+
+
 // Weather Widget ------------------------------------------------------------------------
 
 // SVG Variables
@@ -33,17 +37,19 @@ const clearIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-t
 
 const fogIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-tabler-mist\" width=\"100\" height=\"100\" viewBox=\"0 0 24 24\" stroke-width=\"0.9\" stroke=\"#002C54\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M5 5h3m4 0h9\" /><path d=\"M3 10h11m4 0h1\" /><path d=\"M5 15h5m4 0h7\" /><path d=\"M3 20h9m4 0h3\" /></svg>";
 
-// OpenWeatherMap API
+// OpenWeatherMap API Call
 
 const weatherWidget = document.getElementById("weatherIcon");
+
+const currentTempDisplay = document.getElementById("currentTempDisplay")
 
 fetch("https://api.openweathermap.org/data/2.5/weather?lat=49.07804610421704&lon=-117.80089689845951&appid=464f77339fb17e890968824a382be54b&units=metric')")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
     document.getElementById("weatherDescription").setAttribute("title", data.weather[0].description);
+    
     // Sets the current weather icon
-    // Else If needs to be extracted as a function
     if (data.weather[0].main == "Thunderstorm") { 
         weatherWidget.innerHTML = thunderstormIcon;
     }else if (data.weather[0].main == "Clouds") { 
@@ -59,15 +65,15 @@ fetch("https://api.openweathermap.org/data/2.5/weather?lat=49.07804610421704&lon
     } else if (data.weather[0].main == "Mist" || "Smoke" || "Haze" || "Dust" || "Fog") { 
         weatherWidget.innerHTML = fogIcon;
     };
+
+    // Sets the temp display
+    let currentTempValue = Math.trunc(data.main.temp);
+    document.getElementById("currentTempDisplay").innerText =  currentTempValue - 273 + "°C";
 });
 
+// Temp Unit Toggle ------------------------------------------------------------------------
 
 
-// Current Temperature Widget ------------------------------------------------------------------------
-
-// SVG Variables
-
-// Else If for extracting current temp
 
 // Search Toggle ------------------------------------------------------------------------
 

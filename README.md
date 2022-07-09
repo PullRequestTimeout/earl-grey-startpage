@@ -16,12 +16,14 @@ Built as a way to play with some new-to-me JS concepts; API calls, basic dark/li
 
 ## To-Dos
 
- - Add Search Bar Underneath Clock
+ - Allow browser location to update API call
+ - ~~Add Search Bar Underneath Clock~~
 	- ~~Add switch between Google and DuckDuckGo~~
 	- ~~Make radio switch direct to Google and DuckDuckGo respectively, using text input as query string~~
  - ~~Fix Clock display while minutes < 10~~
  - Current Weather Widget
  	- Add hover description of current weather on mouseover of weather icon
+	- Customise weather description css
 	- Add error icon when no internet access
  - Current Temperature Widget
 	- Use OpenWeatherMaps API to display current temperature

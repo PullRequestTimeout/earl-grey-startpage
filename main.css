@@ -68,11 +68,11 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-h1, h2, h3 {
+h1 {
     font-family: 'Abril Fatface', cursive;
 }
 
-p, input {
+p, input, h2, h3 {
     font-family: 'Comic Neue', cursive;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -92,6 +92,7 @@ p, input {
 }
 
 .clock {
+    user-select: none;
     font-size: 12rem;
     color: transparent;
     -webkit-text-stroke-width: 3.5px;
@@ -241,6 +242,11 @@ input[type="radio"]:checked + label::after {
 a:hover svg {
     transition: 0.1s ease-in-out;
     transform: scale(1.05);
+}
+
+.current-temp {
+    font-size: 3.5rem;
+    color: var(--clr-line-stroke);
 }
 
 .loading-spinner {

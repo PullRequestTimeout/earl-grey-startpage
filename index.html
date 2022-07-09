@@ -38,7 +38,7 @@
     <title>New Tab</title>
 </head>
 
-<body onload="updateClock(); setInterval('updateClock()', 10000)">
+<body onload="updateClock(); setInterval('updateClock()', 1000)">
 
     <div>
         <label class="switch">
@@ -49,7 +49,7 @@
     <main>
         <div class="clock-search-grid">
             <div class="clock">
-                <h1 id="timeDisplay"></h1>
+                <h1 id="timeDisplay" ></h1>
             </div>
             <div class="search-widget">
                 <input type="radio" name="search" class="search-switch" value="google" id="googleSearchSwitch" checked>
@@ -159,7 +159,7 @@
                 </a>
             </div>
             <div class="widget wtr">
-
+                <h2 class="current-temp" id="currentTempDisplay">69°C</h2>
             </div>
         </div>
     </main>
