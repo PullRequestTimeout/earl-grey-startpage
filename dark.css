@@ -36,4 +36,6 @@ body {
 
 .search-input {
     color: var(--clr-light-background);
+    border-color: var(--clr-light-background);
+    caret-color: var(--clr-light-background);
 }

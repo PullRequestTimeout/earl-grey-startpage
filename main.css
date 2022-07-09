@@ -245,8 +245,20 @@ a:hover svg {
 }
 
 .current-temp {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     color: var(--clr-line-stroke);
+}
+
+#minMaxTempDisplay {
+    display: none;
+}
+
+.temp-widget:hover > #currentTempDisplay {
+    display: none;
+}
+
+.temp-widget:hover > #minMaxTempDisplay {
+    display: block;
 }
 
 .loading-spinner {
