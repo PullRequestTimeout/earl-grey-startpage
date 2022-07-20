@@ -338,3 +338,44 @@ a:hover svg {
    input:checked + .slider:before {
     transform: translateX(1.5em);
    }
+
+/*|| Update Location Button --------------------------------------------------------------------------------------------------*/
+
+.update-location-widget {
+    position: fixed;
+    display: inline-flex;
+    bottom: 1em;
+    right: 4em;
+}
+
+.location-data {
+    position: relative;
+    left: -2.5em;
+    bottom: 1.5em;
+    color: var(--clr-line-stroke);
+    /* transform: scale(0, 1); */
+    opacity: 0;
+	transform-origin: right;
+    user-select: none;
+}
+
+.location-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.location-button:hover {
+    transform: scale(1.2);
+    transition: 0.2s ease;
+}
+
+.location-button:active {
+    transform: scale(1);
+}
+
+.location-button:hover + .location-data {
+    opacity: 1;
+    transition: 0.75s ease;
+}
