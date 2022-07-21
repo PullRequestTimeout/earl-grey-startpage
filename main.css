@@ -344,25 +344,27 @@ a:hover svg {
 .update-location-widget {
     position: fixed;
     display: inline-flex;
-    bottom: 1em;
+    flex-direction: row-reverse;
+    bottom: 2em;
     right: 4em;
 }
 
 .location-data {
     position: relative;
-    left: -2.5em;
-    bottom: 1.5em;
     color: var(--clr-line-stroke);
     /* transform: scale(0, 1); */
     opacity: 0;
 	transform-origin: right;
     user-select: none;
+    align-self: center;
+    margin-right: 0.5em;
 }
 
 .location-button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    
 
 }
 
