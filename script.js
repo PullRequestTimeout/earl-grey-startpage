@@ -67,20 +67,32 @@ function updateLocation(){
                 const currentTempDisplay = document.getElementById("currentTempDisplay")
 
                 // Sets the current weather icon
-                if (data.weather[0].main == "Thunderstorm") { 
-                    weatherWidget.innerHTML = thunderstormIcon;
-                }else if (data.weather[0].main == "Clouds") { 
-                    weatherWidget.innerHTML = cloudsIcon;
-                } else if (data.weather[0].main == "Drizzle") { 
-                    weatherWidget.innerHTML = drizzleIcon;
-                } else if (data.weather[0].main == "Rain") { 
-                    weatherWidget.innerHTML = rainIcon;
-                } else if (data.weather[0].main == "Snow") { 
-                    weatherWidget.innerHTML = snowIcon;
-                } else if (data.weather[0].main == "Clear") { 
-                    weatherWidget.innerHTML = clearIcon;
-                } else if (data.weather[0].main == "Mist" || "Smoke" || "Haze" || "Dust" || "Fog") { 
-                    weatherWidget.innerHTML = fogIcon;
+                switch (data.weather[0].main) {
+                    case "Thunderstorm":
+                        weatherWidget.innerHTML = thunderstormIcon;
+                        break;
+                    case "Clouds":
+                        weatherWidget.innerHTML = cloudsIcon;
+                        break;
+                    case "Drizzle":
+                        weatherWidget.innerHTML = drizzleIcon;
+                        break;
+                    case "Rain":
+                        weatherWidget.innerHTML = rainIcon;
+                        break;
+                    case "Snow":
+                        weatherWidget.innerHTML = snowIcon;
+                        break;
+                    case "Clear":
+                        weatherWidget.innerHTML = clearIcon;
+                        break;
+                    case "Mist":
+                    case "Smoke":
+                    case "Haze":
+                    case "Dust":
+                    case "Fog":
+                        weatherWidget.innerHTML = fogIcon;
+                        break;
                 };
 
                 // Sets Current Location Text
@@ -99,6 +111,9 @@ function updateLocation(){
 }
 
 // Temp Unit Toggle ---------------------------------------------------------------------
+
+// Celcus to Fahrenheit formula is (0°C × 9/5) + 32
+
 
 
 
