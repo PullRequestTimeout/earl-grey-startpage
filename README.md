@@ -16,8 +16,8 @@ Built as a way to play with some new-to-me JS concepts; API calls, basic dark/li
 
 ## To-Dos
 
- - Use .localStorage() to save user settings
- - Allow browser location to update API call
+ - ~~Use .localStorage() to save user settings~~
+ - ~~Allow browser location to update API call~~
  - ~~Add Search Bar Underneath Clock~~
 	- ~~Add switch between Google and DuckDuckGo~~
 	- ~~Make radio switch direct to Google and DuckDuckGo respectively, using text input as query string~~
