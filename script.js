@@ -1,7 +1,5 @@
 // Dark Mode --------------------------------------------------------------------------
 
-
-
 const toggleDarkStyles = () => {
     
     const darkModeSwitch = document.getElementById("darkModeToggle");
@@ -43,8 +41,6 @@ const loadSaveState = () => {
 }
 
 // Update Location and Set Weather Icons and Data-----------------------------------------
-
-let calledTemperatureValue;
 
 const updateLocation = () =>{
     
@@ -104,17 +100,17 @@ const updateLocation = () =>{
                 // Sets the temp display
                 let currentTempValue = Math.trunc(data.main.temp);
                 
-                calledTemperatureValue = currentTempValue;
+                localStorage.setItem("currentTemp", currentTempValue);
 
-                // function setTempUnit() {
-                    const tempUnitToggle = document.getElementById("tempUnitToggle");
-                    // let tempUnitToggle = JSON.parse(localStorage.getItem("tempUnitToggle"));
-                    if (tempUnitToggle.checked == true) {
-                        document.getElementById("currentTempDisplay").innerText = Math.trunc(currentTempValue * 9/5 + 32) + "°F"
-                    } else if (tempUnitToggle.checked == false) {
-                        document.getElementById("currentTempDisplay").innerText = currentTempValue + "°C"
-                    }
-                // }
+                
+                const tempUnitToggle = document.getElementById("tempUnitToggle");
+                
+                if (tempUnitToggle.checked == true) {
+                    document.getElementById("currentTempDisplay").innerText = Math.trunc(currentTempValue * 9/5 + 32) + "°F"
+                } else if (tempUnitToggle.checked == false) {
+                    document.getElementById("currentTempDisplay").innerText = currentTempValue + "°C"
+                }
+                
 
             })}
 
@@ -125,21 +121,32 @@ const updateLocation = () =>{
 
 // Celcius to Fahrenheit formula is ([temp in celcius] × 9/5) + 32
 
-
-
 const tempStorage = () => {
     const tempUnitToggle = document.getElementById("tempUnitToggle");
 
     if (tempUnitToggle.checked == true) {
-        console.log("True");
         localStorage.setItem("tempUnitToggle", true);
     } else if (tempUnitToggle.checked == false){
-        console.log("False");
         localStorage.setItem("tempUnitToggle", false);
     }
 }
 
+const changeTempUnit = () => {
+    
+    const tempDisplay = document.getElementById("currentTempDisplay");;
+    const tempUnitToggle = JSON.parse(localStorage.getItem("tempUnitToggle"));
+    const currentTemp = JSON.parse(localStorage.getItem("currentTemp"));
+    
+    if (tempUnitToggle == true){
+        tempDisplay.innerText = currentTemp * 9/5 + 32 + "°F";
+    } else if (tempUnitToggle == false) {
+        tempDisplay.innerText = currentTemp + "°C";
+    }
+
+}
+
 document.getElementById("tempUnitToggle").addEventListener("change", tempStorage) // Needs better function name
+document.getElementById("tempUnitToggle").addEventListener("change", changeTempUnit)
 
 // Search Toggle ------------------------------------------------------------------------
 
