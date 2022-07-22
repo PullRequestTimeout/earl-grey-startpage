@@ -100,11 +100,11 @@ function updateLocation(){
 
                 // Sets the temp display
                 let currentTempValue = Math.trunc(data.main.temp);
-                let minTempValue = Math.trunc(data.main.temp_min);
-                let maxTempValue = Math.trunc(data.main.temp_max);
+                // let minTempValue = Math.trunc(data.main.temp_min);
+                // let maxTempValue = Math.trunc(data.main.temp_max);
                 
                 document.getElementById("currentTempDisplay").innerText = currentTempValue + "°C";
-                document.getElementById("minMaxTempDisplay").innerText = minTempValue + "°C / " + maxTempValue + "°C";
+                // document.getElementById("minMaxTempDisplay").innerText = minTempValue + "°C / " + maxTempValue + "°C";
             })}
 
     navigator.geolocation.getCurrentPosition(success, error);
@@ -112,8 +112,7 @@ function updateLocation(){
 
 // Temp Unit Toggle ---------------------------------------------------------------------
 
-// Celcus to Fahrenheit formula is (0°C × 9/5) + 32
-
+// Celcius to Fahrenheit formula is (0°C × 9/5) + 32
 
 
 
