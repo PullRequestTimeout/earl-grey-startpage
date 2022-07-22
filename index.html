@@ -29,6 +29,10 @@
             timeDisplay.innerText = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
         } else if (currentTime.getHours() < 12 && currentTime.getMinutes() < 10){
             timeDisplay.innerText = `${currentTime.getHours()}:0${currentTime.getMinutes()}`;
+        } else if (currentTime.getHours() == 0 && currentTime.getMinutes() < 10) {
+        timeDisplay.innerText = `12:0${currentTime.getMinutes()}`;
+        } else if (currentTime.getHours() == 0 && currentTime.getMinutes() > 10){
+            timeDisplay.innerText = `12:${currentTime.getMinutes()}`;
         }};
     
     </script>
