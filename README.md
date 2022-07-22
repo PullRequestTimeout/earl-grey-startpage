@@ -25,11 +25,11 @@ Built as a way to play with some new-to-me JS concepts; API calls, basic dark/li
  - Current Weather Widget
  	- ~~Add hover description of current weather on mouseover of weather icon~~
 	- ~~Customise weather description css~~ (Not possiple using <span>, maybe create custom element?)
-	- Add error icon when no internet access
+	- Add error icon when no internet access or location data
  - Current Temperature Widget
 	- ~~Use OpenWeatherMaps API to display current temperature~~
 	- ~~Hover over Current Temperature Widget to Display Daily Min/Max~~ (Seems like OpenWeatherMaps current weather call doesn't return daily min/max, maybe secondary api call or remove feature?)
-	- Click Current Temperature Widget to swap between celcius and fahrenheit 
+	- Click Current Temperature Widget to swap between celcius and fahrenheit
  - Mountain Conditions Widget*
 	- Could probably be a whole app itself. Click Icon to display snow conditions from Dec to Apr, or bike trail conditions from Apr to Dec
 	- Could use AvalancheCanada's API for forecasting (https://avalanche-canada.github.io/AvCan-Services/)
