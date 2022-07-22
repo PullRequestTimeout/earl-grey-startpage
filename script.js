@@ -38,10 +38,24 @@ function loadSaveState(){
     if(darkModeToggle == true){ 
         document.getElementById("darkModeToggle").checked = true;
         toggleDarkStyles();
-    }
+    };
 }
 
 // Update Location ------------------------------------------------------------------------ 
+
+document.getElementById("locationButton").addEventListener("click", updateLocation)
+
+const success = (position) => {
+    console.log(position)
+}
+
+const error = (position) => {
+    alert("You have not given location permissions to this website.")
+}
+
+function updateLocation(){
+    navigator.geolocation.getCurrentPosition(success, error);
+}
 
 
 
