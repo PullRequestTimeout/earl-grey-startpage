@@ -1,6 +1,5 @@
 // Dark Mode -----------------------------------------------------------------------------
 
-
 document.getElementById("darkModeToggle").addEventListener('change', toggleDarkStyles);
 
 function toggleDarkStyles(){
@@ -41,9 +40,7 @@ function loadSaveState(){
     };
 }
 
-// Update Location and Set Weather Icons and Data------------------------------------------------------------------------ 
-
-// document.getElementById("locationButton").addEventListener("click", updateLocation)
+// Update Location and Set Weather Icons and Data-----------------------------------------
 
 function updateLocation(){
     
@@ -52,8 +49,7 @@ function updateLocation(){
     }
 
     const success = (position) => {
-        // console.log(position.coords.latitude);
-        // console.log(position.coords.longitude);
+        // SVG Icon Variables
         const thunderstormIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-tabler-cloud-storm\" width=\"100\" height=\"100\" viewBox=\"0 0 24 24\" stroke-width=\"0.9\" stroke=\"#002C54\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1\" /><polyline points=\"13 14 11 18 14 18 12 22\" /></svg>";
         const cloudsIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-tabler-cloud\" width=\"100\" height=\"100\" viewBox=\"0 0 24 24\" stroke-width=\"0.9\" stroke=\"#002C54\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12\" /></svg>";
         const drizzleIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-tabler-cloud-snow\" width=\"100\" height=\"100\" viewBox=\"0 0 24 24\" stroke-width=\"0.9\" stroke=\"#002C54\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7\" /><path d=\"M11 15v.01m0 3v.01m0 3v.01m4 -4v.01m0 3v.01\" /></svg>";
@@ -65,7 +61,7 @@ function updateLocation(){
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=464f77339fb17e890968824a382be54b&units=metric`)
             .then((response) => response.json())
             .then((data) => {
-                // console.log(data);
+                console.log(data);
                 document.getElementById("weatherDescription").setAttribute("title", data.weather[0].description);
                 const weatherWidget = document.getElementById("weatherIcon");
                 const currentTempDisplay = document.getElementById("currentTempDisplay")
@@ -102,7 +98,7 @@ function updateLocation(){
     navigator.geolocation.getCurrentPosition(success, error);
 }
 
-// Temp Unit Toggle ------------------------------------------------------------------------
+// Temp Unit Toggle ---------------------------------------------------------------------
 
 
 
