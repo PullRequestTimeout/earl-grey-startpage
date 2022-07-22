@@ -1,8 +1,8 @@
-// Dark Mode -----------------------------------------------------------------------------
+// Dark Mode --------------------------------------------------------------------------
 
-document.getElementById("darkModeToggle").addEventListener('change', toggleDarkStyles);
 
-function toggleDarkStyles(){
+
+const toggleDarkStyles = () => {
     
     const darkModeSwitch = document.getElementById("darkModeToggle");
     
@@ -30,9 +30,11 @@ function toggleDarkStyles(){
         localStorage.setItem("darkModeSwitch", false);
 }};
 
+document.getElementById("darkModeToggle").addEventListener('change', toggleDarkStyles);
+
 // Local Storage ------------------------------------------------------------------------ 
 
-function loadSaveState(){
+const loadSaveState = () => {
     let darkModeToggle = JSON.parse(localStorage.getItem("darkModeSwitch"));
     if(darkModeToggle == true){ 
         document.getElementById("darkModeToggle").checked = true;
@@ -42,7 +44,9 @@ function loadSaveState(){
 
 // Update Location and Set Weather Icons and Data-----------------------------------------
 
-function updateLocation(){
+let calledTemperatureValue;
+
+const updateLocation = () =>{
     
     const error = () => {
         alert("You have not given location permissions to this website.")
@@ -64,7 +68,6 @@ function updateLocation(){
                 console.log(data);
                 document.getElementById("weatherDescription").setAttribute("title", data.weather[0].description);
                 const weatherWidget = document.getElementById("weatherIcon");
-                const currentTempDisplay = document.getElementById("currentTempDisplay")
 
                 // Sets the current weather icon
                 switch (data.weather[0].main) {
@@ -100,11 +103,19 @@ function updateLocation(){
 
                 // Sets the temp display
                 let currentTempValue = Math.trunc(data.main.temp);
-                // let minTempValue = Math.trunc(data.main.temp_min);
-                // let maxTempValue = Math.trunc(data.main.temp_max);
                 
-                document.getElementById("currentTempDisplay").innerText = currentTempValue + "°C";
-                // document.getElementById("minMaxTempDisplay").innerText = minTempValue + "°C / " + maxTempValue + "°C";
+                calledTemperatureValue = currentTempValue;
+
+                // function setTempUnit() {
+                    const tempUnitToggle = document.getElementById("tempUnitToggle");
+                    // let tempUnitToggle = JSON.parse(localStorage.getItem("tempUnitToggle"));
+                    if (tempUnitToggle.checked == true) {
+                        document.getElementById("currentTempDisplay").innerText = Math.trunc(currentTempValue * 9/5 + 32) + "°F"
+                    } else if (tempUnitToggle.checked == false) {
+                        document.getElementById("currentTempDisplay").innerText = currentTempValue + "°C"
+                    }
+                // }
+
             })}
 
     navigator.geolocation.getCurrentPosition(success, error);
@@ -112,15 +123,29 @@ function updateLocation(){
 
 // Temp Unit Toggle ---------------------------------------------------------------------
 
-// Celcius to Fahrenheit formula is (0°C × 9/5) + 32
+// Celcius to Fahrenheit formula is ([temp in celcius] × 9/5) + 32
 
 
+
+const tempStorage = () => {
+    const tempUnitToggle = document.getElementById("tempUnitToggle");
+
+    if (tempUnitToggle.checked == true) {
+        console.log("True");
+        localStorage.setItem("tempUnitToggle", true);
+    } else if (tempUnitToggle.checked == false){
+        console.log("False");
+        localStorage.setItem("tempUnitToggle", false);
+    }
+}
+
+document.getElementById("tempUnitToggle").addEventListener("change", tempStorage) // Needs better function name
 
 // Search Toggle ------------------------------------------------------------------------
 
 const searchString = document.getElementById("searchString")
 
-document.getElementById("googleSearchSwitch").onclick = function (){
+document.getElementById("googleSearchSwitch").onclick = function(){
     searchString.setAttribute("action", "https://www.google.com/search?");
 }
 
