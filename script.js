@@ -106,9 +106,9 @@ const updateLocation = () =>{
                 const tempUnitToggle = document.getElementById("tempUnitToggle");
                 
                 if (tempUnitToggle.checked == true) {
-                    document.getElementById("currentTempDisplay").innerText = Math.trunc(currentTempValue * 9/5 + 32) + "°F"
+                    document.getElementById("currentTempDisplay").innerText = Math.trunc(currentTempValue * 9/5 + 32) + "°F";
                 } else if (tempUnitToggle.checked == false) {
-                    document.getElementById("currentTempDisplay").innerText = currentTempValue + "°C"
+                    document.getElementById("currentTempDisplay").innerText = currentTempValue + "°C";
                 }
                 
 
@@ -118,8 +118,6 @@ const updateLocation = () =>{
 }
 
 // Temp Unit Toggle ---------------------------------------------------------------------
-
-// Celcius to Fahrenheit formula is ([temp in celcius] × 9/5) + 32
 
 const tempStorage = () => {
     const tempUnitToggle = document.getElementById("tempUnitToggle");
@@ -138,7 +136,7 @@ const changeTempUnit = () => {
     const currentTemp = JSON.parse(localStorage.getItem("currentTemp"));
     
     if (tempUnitToggle == true){
-        tempDisplay.innerText = currentTemp * 9/5 + 32 + "°F";
+        tempDisplay.innerText = Math.trunc(currentTemp * 9/5 + 32) + "°F";
     } else if (tempUnitToggle == false) {
         tempDisplay.innerText = currentTemp + "°C";
     }
