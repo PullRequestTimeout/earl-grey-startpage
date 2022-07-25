@@ -40,3 +40,4 @@ Built as a way to play with some new-to-me JS concepts; API calls, basic dark/li
 Welp. V1 Didn't last too long. Some much needed new tab behaviours were lacking as the site couldn't access some browser functionality, so v2 will immediately start development as an extension.
 
 
+
