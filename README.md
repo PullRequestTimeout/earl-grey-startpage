@@ -35,5 +35,8 @@ Built as a way to play with some new-to-me JS concepts; API calls, basic dark/li
 	- ~~Could use AvalancheCanada's API for forecasting (https://avalanche-canada.github.io/AvCan-Services/)~~
 	- ~~Use OpenWeatherMaps API for last 5 days to build general expected trail conditions of bike trails~~
 
+## v2.0
+
+Welp. V1 Didn't last too long. Some much needed new tab behaviours were lacking as the site couldn't access some browser functionality, so v2 will immediately start development as an extension.
 
 
